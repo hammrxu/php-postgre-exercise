@@ -3,6 +3,7 @@
 namespace silverorange\DevTest\Controller;
 
 use PDO;
+use Parsedown;
 use silverorange\DevTest\Model\Post;
 use silverorange\DevTest\Context;
 use silverorange\DevTest\Template;
@@ -15,6 +16,7 @@ class PostDetails extends Controller
     public function getContext(): Context
     {
         $context = new Context();
+        $Parsedown = new Parsedown();
 
         if ($this->post === null) {
             $context->title = 'Not Found';
@@ -22,7 +24,7 @@ class PostDetails extends Controller
         } else {
             $context->title = $this->post->title;
             // Add $content and $author
-            $context->content = $this->post->body;
+            $context->content = $Parsedown->text($this->post->body);
             $context->author = $this->post->author;
         }
         return $context;
