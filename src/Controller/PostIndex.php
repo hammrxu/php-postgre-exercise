@@ -25,7 +25,7 @@ class PostIndex extends Controller
     {
         // TODO: Load posts from database here.
         // reset posts
-        $this->posts = [];
+        // $this->posts = [];
         $sth = $this->db->prepare("
             SELECT 
                 posts.*, 
@@ -42,11 +42,11 @@ class PostIndex extends Controller
 
         ");
         $sth->execute();
-        $posts = $sth->fetchALl();
-        if ($posts) {
-            foreach($posts as $post)
-            var_dump($post["title"]);
-            $this->posts = $posts;
+        $posts_result = $sth->fetchALl();
+        if ($posts_result) {
+            // foreach($posts as $post)
+            // var_dump($post["title"]);
+            $this->posts[] = $posts_result;
         }
     }
 }

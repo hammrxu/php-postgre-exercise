@@ -8,6 +8,8 @@ class PostIndex extends Layout
 {
     protected function renderPage(Context $context): string
     {
+        $test = $context->posts;
+        var_dump($test);
         //test with title first
         $postWrap = "<ul>";
         foreach ($context->posts as $post) {
