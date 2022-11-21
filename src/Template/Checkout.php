@@ -36,6 +36,11 @@ class Checkout extends Layout
                                 </tbody>
                             </table>
                         </div>
+                        <br/><br/>
+                        <div class="order-summary-read">
+                            <input type="checkbox" id="order-summary-check-mark" name="order-summary-check-mark" value="1" reuqired>
+                            <span class="order-summary-description"> *With our “Rise & Shine” beta program, you get early access to new features, but they may not always work perfectly. You can change your beta preference at any time after you join.</span>
+                        </div>
                     </div>
                     <div class="frame">
                         <h2 class="frame__title">Account Details</h2>
