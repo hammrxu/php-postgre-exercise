@@ -11,7 +11,7 @@ class PostDetails extends Layout
         // @codingStandardsIgnoreStart
         return <<<HTML
             <div style="text-align:right">
-                <span>Title: $context->title</span>
+                <span>Title: $context->title,</span>
                 <span>Author: $context->author</span>
             </div>
             <blockquote >$context->content</blockquote>
