@@ -47,7 +47,7 @@ class PostIndex extends Controller
         if ($posts_result) {
             // foreach($posts as $post)
             // var_dump($post["title"]);
-            $this->posts[] = $posts_result;
+            $this->posts = $posts_result;
         }
     }
 }

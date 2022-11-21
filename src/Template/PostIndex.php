@@ -8,15 +8,26 @@ class PostIndex extends Layout
 {
     protected function renderPage(Context $context): string
     {
-        $test = $context->posts;
-        var_dump($test);
-        //test with title first
         $postWrap = "<ul>";
+        //test with title first
         foreach ($context->posts as $post) {
             $postWrap .= "
-            <li>" .
-                 $post["title"] . 
-            "</li>
+            <li>
+                <span>
+                <a href='/posts/" . $post["id"] . "'>" . $post["title"] . "</a>" .
+                
+                " by  " .
+                
+                $post["full_name"] . 
+
+                "<br/>Last modified at: " . 
+
+                $post['modified_at'] . 
+
+                "</span>
+                
+                &nbsp;
+            </li>
             <br/>
             ";
         }
@@ -27,7 +38,9 @@ class PostIndex extends Layout
                 <div>
                     $postWrap
                 </div>
-HTML;
+                HTML;
         // @codingStandardsIgnoreEnd
     }
 }
+
+        
