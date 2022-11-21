@@ -47,9 +47,8 @@ class App
             $controller = new Controller\PostDetails($this->db, $params);
         } elseif (preg_match('@^/checkout/?$@', $path) === 1) {
             $controller = new Controller\Checkout($this->db, []);
-        }
         // Add a new router for importer
-        elseif (preg_match('@^/importer/?$@', $path) === 1) {
+        } elseif (preg_match('@^/importer/?$@', $path) === 1) {
             $controller = new Controller\Importer($this->db, []);
         }
 
