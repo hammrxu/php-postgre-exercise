@@ -10,7 +10,13 @@ class PostDetails extends Layout
     {
         // @codingStandardsIgnoreStart
         return <<<HTML
-<p>SHOW CONTENT FOR {$context->getPostId()} HERE</p>
+            <div style="text-align:right">
+                <span>Title: $context->title</span>
+                <span>Author: $context->author</span>
+            </div>
+            <blockquote >$context->content</blockquote>
+
+
 HTML;
         // @codingStandardsIgnoreEnd
     }
