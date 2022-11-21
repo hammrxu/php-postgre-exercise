@@ -119,7 +119,7 @@ class Checkout extends Layout
                             </div>
                         </div>
                         <br/>
-                        <button id="place-order">Place Order</button>
+                        <button id="place-order" type="submit", class="button-13",role="button">Place Order</button>
                     </div>
                 </form>
 HTML;
