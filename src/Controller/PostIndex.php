@@ -44,7 +44,8 @@ class PostIndex extends Controller
         $sth->execute();
         $posts = $sth->fetchALl();
         if ($posts) {
-            var_dump($posts);
+            foreach($posts as $post)
+            var_dump($post["title"]);
             $this->posts = $posts;
         }
     }
