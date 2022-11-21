@@ -35,7 +35,7 @@ class App
     {
         $controller = new Controller\NotFound($this->db, []);
 
-        // TODO: Do stuff like parse query params from $_GET here if required.
+        // Mark-TODO: Do stuff like parse query params from $_GET here if required.
 
         // Switch to set up different context data for different URLs.
         if (preg_match('@^/?$@', $path) === 1) {
@@ -47,6 +47,10 @@ class App
             $controller = new Controller\PostDetails($this->db, $params);
         } elseif (preg_match('@^/checkout/?$@', $path) === 1) {
             $controller = new Controller\Checkout($this->db, []);
+        }
+        // Add a new router for importer
+        elseif (preg_match('@^/importer/?$@', $path) === 1) {
+            $controller = new Controller\Importer($this->db, []);
         }
 
         return $controller;
