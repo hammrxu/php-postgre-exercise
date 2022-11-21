@@ -24,6 +24,29 @@ class PostIndex extends Controller
     protected function loadData(): void
     {
         // TODO: Load posts from database here.
+        // reset posts
         $this->posts = [];
+        $sth = $this->db->prepare("
+            SELECT 
+                posts.*, 
+                authors.full_name 
+            FROM posts 
+            LEFT JOIN 
+                authors 
+            ON 
+                posts.author = authors.id 
+            ORDER BY 
+                posts.modified_at 
+                ASC,
+                authors.full_name
+
+        ");
+        $sth->execute();
+        $posts = $sth->fetchALl();
+        if ($posts) {
+            var_dump($posts);
+            $this->posts = $posts;
+        }
     }
 }
+    
