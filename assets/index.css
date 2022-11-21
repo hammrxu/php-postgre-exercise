@@ -111,3 +111,14 @@ main {
   border-bottom: 1px solid #eee;
   padding: 0.5rem;
 }
+
+.order-summary .product-image-click .product-image {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+}
+.order-summary .product-image-click .product-image:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
