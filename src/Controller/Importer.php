@@ -19,14 +19,14 @@ class Importer extends Controller
     public function getTemplate(): Template\Template
     {
         // use built-in DirectoryIterator as $iterator
-        $iterator = new DirectoryIterator (dirname(dirname(dirname(__FILE__))) . '\\data');
+        $iterator = new DirectoryIterator(dirname(dirname(dirname(__FILE__))) . '\\data');
 
-        foreach($iterator as $fileinfo){
+        foreach ($iterator as $fileinfo) {
             // filter out json files
-            if($fileinfo->getExtension() == 'json'){
+            if ($fileinfo->getExtension() == 'json') {
                 $fileContent = file_get_contents($fileinfo->getPathname());
                 $data = json_decode($fileContent, true);
-                
+
                 try {
                     $sql = "
                         INSERT INTO 

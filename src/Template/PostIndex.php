@@ -15,14 +15,14 @@ class PostIndex extends Layout
             <li>
                 <span>
                 <a href='/posts/" . $post["id"] . "'>" . $post["title"] . "</a>" .
-                
+
                 " by  " .
-                
-                $post["full_name"] . 
 
-                "<br/>Last modified at: " . 
+                $post["full_name"] .
 
-                $post['modified_at'] . 
+                "<br/>Last modified at: " .
+
+                $post['modified_at'] .
 
                 "</span>
                 
@@ -42,5 +42,3 @@ class PostIndex extends Layout
         // @codingStandardsIgnoreEnd
     }
 }
-
-        

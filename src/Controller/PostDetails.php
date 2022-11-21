@@ -54,7 +54,8 @@ class PostDetails extends Controller
         if ($this->params[0] === "" || $this->params[0] === null) {
             // Do nothing
         } else {
-            $sth = $this->db->prepare("
+            $sth = $this->db->prepare(
+                "
                 SELECT 
                     posts.*, 
                     authors.full_name 
@@ -68,8 +69,9 @@ class PostDetails extends Controller
                     posts.author = authors.id 
                 WHERE 
                     posts.id = :postID
-            ");
-            $sth->execute([':postID'=>$this->params[0]]);
+            "
+            );
+            $sth->execute([':postID' => $this->params[0]]);
             $sth->setFetchMode(PDO::FETCH_CLASS, Post::class);
             $post = $sth->fetch();
             if ($post) {

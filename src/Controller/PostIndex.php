@@ -27,7 +27,8 @@ class PostIndex extends Controller
         // TODO: Load posts from database here.
         // reset posts
         $this->posts = [];
-        $sth = $this->db->prepare("
+        $sth = $this->db->prepare(
+            "
             SELECT 
                 posts.*, 
                 authors.full_name 
@@ -41,7 +42,8 @@ class PostIndex extends Controller
                 ASC,
                 authors.full_name
 
-        ");
+        "
+        );
         $sth->execute();
         $posts_result = $sth->fetchALl();
         if ($posts_result) {
@@ -49,4 +51,3 @@ class PostIndex extends Controller
         }
     }
 }
-    
