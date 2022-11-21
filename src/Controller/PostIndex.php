@@ -13,6 +13,7 @@ class PostIndex extends Controller
     {
         $context = new Context();
         $context->title = 'Posts';
+        $context->posts = $this->posts;
         return $context;
     }
 
