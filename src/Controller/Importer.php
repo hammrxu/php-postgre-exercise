@@ -45,6 +45,13 @@ class Importer extends Controller
                                 '$data[modified_at]', 
                                 '$data[author]'
                             )
+                            ON CONFLICT (id) DO UPDATE SET
+                                id = '$data[id]',
+                                title = '$data[title]',
+                                body = '$data[body]',
+                                created_at = '$data[created_at]',
+                                modified_at = '$data[modified_at]',
+                                author = '$data[author]'
                         ";
                     $this->db->exec($sql);
                 } catch (Exception $e) {

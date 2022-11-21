@@ -16,7 +16,7 @@ class Importer extends Layout
         // @codingStandardsIgnoreStart
         return <<<HTML
                     <div>
-                        <!-- All JSON files under data/ has been imported to databased successfully. -->
+                        All JSON files under data/ has been imported to databased successfully.
                     </div>
 HTML;
         // @codingStandardsIgnoreEnd
